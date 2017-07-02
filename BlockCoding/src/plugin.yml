@@ -1,0 +1,9 @@
+main: com.perasite.blockcoding.Main
+name: BlockCoding
+version: 1.0
+description: Coding with blocks!
+
+commands:
+  bc:
+    description: Block coding main command.
+    aliases: [blockcoding, 블럭코딩]
