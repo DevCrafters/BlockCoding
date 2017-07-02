@@ -24,7 +24,7 @@ class Script {
 
 class ScriptItem {
 
-	private ItemStack item;
+	private ItemStack item = null;
 
 	public ScriptItem(ItemBuilder builder) {
 		item = builder;
