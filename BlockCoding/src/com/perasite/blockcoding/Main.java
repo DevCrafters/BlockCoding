@@ -25,6 +25,6 @@ public class Main extends JavaPlugin {
 				new Argument("sender", "Notch"),
 				new Argument("receiver", "PeraSite")).serialize());
 
-		System.out.println(BlockManager.getInstance().getBlocks().keySet());
+		System.out.println("리스트: " +  BlockManager.getInstance().getBlocks().keySet());
 	}
 }
