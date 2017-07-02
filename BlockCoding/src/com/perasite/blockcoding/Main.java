@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.perasite.blockcoding.block.ABlock;
 import com.perasite.blockcoding.block.TalkBlock;
+import com.perasite.blockcoding.manager.BlockManager;
 
 public class Main extends JavaPlugin {
 

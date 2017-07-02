@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.perasite.blockcoding.Argument;
-import com.perasite.blockcoding.BlockManager;
+import com.perasite.blockcoding.manager.BlockManager;
 
 /**
  * Created by user on 2017-07-01.
@@ -119,5 +119,7 @@ public abstract class ABlock implements Serializable {
 	public abstract boolean execute();
 
 	public abstract List<String> getFieldList();
+	
+	public abstract List<String> getDescription();
 
 }
