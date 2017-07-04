@@ -15,6 +15,14 @@ public class BlockManager {
 	private BlockManager() {
 		blocks.put(PrintBlock.class.getSimpleName(), new PrintBlock());
 	}
+	
+	public boolean isRegistered(String name) {
+		return blocks.containsKey(name);
+	}
+	
+	public boolean isRegistered(ABlock block) {
+		return isRegistered(block.getName());
+	}
 
 	public void registerBlock(ABlock block) {
 		if (!blocks.containsKey(block.getName())) {

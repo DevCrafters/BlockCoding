@@ -1,4 +1,4 @@
-package com.perasite.blockcoding;
+package com.perasite.blockcoding.util;
 
 public class Argument {
 

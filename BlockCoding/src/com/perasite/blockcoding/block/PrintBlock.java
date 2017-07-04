@@ -3,7 +3,7 @@ package com.perasite.blockcoding.block;
 import java.util.Arrays;
 import java.util.List;
 
-import com.perasite.blockcoding.Argument;
+import com.perasite.blockcoding.util.Argument;
 
 /**
  * Created by user on 2017-07-01.
@@ -12,6 +12,10 @@ public class PrintBlock extends ABlock {
 
 	private static final long serialVersionUID = 1L;
 
+	public PrintBlock() {
+		super();
+	}
+	
 	public PrintBlock(Argument... args) {
 		super(args);
 	}
@@ -23,6 +27,7 @@ public class PrintBlock extends ABlock {
 
 	@Override
 	public boolean execute() {
+		System.out.println(args.get("player") + "에게 " + args.get("msg") + "를 전송합니다.");
 		return false;
 	}
 
