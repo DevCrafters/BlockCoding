@@ -1,6 +1,7 @@
 package com.perasite.blockcoding.block;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import com.perasite.blockcoding.util.Argument;
@@ -13,7 +14,11 @@ public class TalkBlock extends ABlock {
 	private static final long serialVersionUID = 1L;
 
 	public TalkBlock(Argument... args) {
-		super();
+		super(args);
+	}
+
+	public TalkBlock(HashMap<String, String> args) {
+		super(args);
 	}
 
 	@Override
@@ -34,5 +39,10 @@ public class TalkBlock extends ABlock {
 	@Override
 	public List<String> getDescription() {
 		return Arrays.asList("전송자가 메세지를 수신자에게 전송합니다.");
+	}
+
+	@Override
+	public ABlock getNewInstance() {
+		return new TalkBlock(args);
 	}
 }

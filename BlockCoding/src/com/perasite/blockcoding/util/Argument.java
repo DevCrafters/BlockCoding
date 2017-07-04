@@ -3,9 +3,9 @@ package com.perasite.blockcoding.util;
 public class Argument {
 
 	private String name;
-	private Object value;
+	private String value;
 
-	public Argument(String name, Object value) {
+	public Argument(String name, String value) {
 		this.name = name;
 		this.value = value;
 	}
@@ -18,11 +18,11 @@ public class Argument {
 		this.name = name;
 	}
 
-	public Object getValue() {
+	public String getValue() {
 		return value;
 	}
 
-	public void setValue(Object value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 

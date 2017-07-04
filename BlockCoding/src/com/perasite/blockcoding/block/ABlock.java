@@ -16,7 +16,7 @@ import com.perasite.blockcoding.util.Argument;
 /**
  * Created by user on 2017-07-01.
  */
-public abstract class ABlock implements Serializable {
+public abstract class ABlock implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -4447363949488375899L;
 	protected HashMap<String, String> args = Maps.newHashMap();
@@ -79,12 +79,19 @@ public abstract class ABlock implements Serializable {
 	}
 
 	public ABlock loadParams(Argument... arguments) {
+		ABlock newInstance = getNewInstance();
 		if (vaildArgument(arguments)) {
 			for (Argument arg : arguments) {
-				args.put(arg.getName(), String.valueOf(arg.getValue()));
+				newInstance.args.put(arg.getName(), String.valueOf(arg.getValue()));
 			}
 		}
-		return this;
+		return newInstance;
+		//		if (vaildArgument(arguments)) {
+		//			for (Argument arg : arguments) {
+		//				args.put(arg.getName(), arg.getValue());
+		//			}
+		//		}
+		//		return this;
 	}
 
 	private boolean vaildArgument(HashMap<String, String> args) {
@@ -103,12 +110,6 @@ public abstract class ABlock implements Serializable {
 		for (Argument arg : args) {
 			argsToNames.add(arg.getName());
 		}
-		
-//		if(argsToNames.containsAll(getFieldList())) {
-//			return true;
-//		} else {
-//			throw new IllegalArgumentException("Wrong parameters: " + argsToNames.toString());
-//		}
 
 		if (argsToNames.size() < getFieldList().size()) {
 			List<String> tmp = new ArrayList<String>(getFieldList());
@@ -119,6 +120,12 @@ public abstract class ABlock implements Serializable {
 			argsToNames.removeAll(getFieldList());
 			throw new IllegalArgumentException("Unacceptable parameters: " + argsToNames.toString());
 		}
+
+		//		if(argsToNames.containsAll(getFieldList())) {
+		//			return true;
+		//		} else {
+		//			throw new IllegalArgumentException("Wrong parameters: " + argsToNames.toString());
+		//		}
 		return true;
 	}
 
@@ -129,5 +136,7 @@ public abstract class ABlock implements Serializable {
 	public abstract List<String> getFieldList();
 
 	public abstract List<String> getDescription();
+
+	public abstract ABlock getNewInstance();
 
 }

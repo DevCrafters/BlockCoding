@@ -1,6 +1,7 @@
 package com.perasite.blockcoding.block;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import com.perasite.blockcoding.util.Argument;
@@ -17,6 +18,10 @@ public class PrintBlock extends ABlock {
 	}
 	
 	public PrintBlock(Argument... args) {
+		super(args);
+	}
+
+	public PrintBlock(HashMap<String, String> args) {
 		super(args);
 	}
 
@@ -39,5 +44,10 @@ public class PrintBlock extends ABlock {
 	@Override
 	public List<String> getDescription() {
 		return Arrays.asList("메세지를 플레이어에게 전송합니다.");
+	}
+
+	@Override
+	public ABlock getNewInstance() {
+		return new PrintBlock();
 	}
 }
